@@ -202,10 +202,10 @@ h1{
 	}
 	.popup{
 		padding: 25px;
-		background: #1B3B50;//#2c3e50;
-		border: 3px solid #0081BC;//#2980b9;
-		max-width: 492px;
-		border-radius: 3px;
+		background: #154252;//#1B3B50;//#2c3e50;
+		border: 3px solid lighten(#154252, 10%);//#0081BC;//#2980b9;
+		max-width: 395px;//492px;
+		border-radius: 5px;
 		margin: 0 auto;
 	}
 	.az-form-popup{
@@ -216,7 +216,7 @@ h1{
 		color: #fff;
 		// font-family: 'arialnarrowbold';
 		font-size: 32px;
-		line-height: 40px;
+		line-height: 36px;
 		display: block;
 		text-align: center;
 	}
@@ -242,13 +242,14 @@ h1{
 		input[type="text"], textarea{
 			width: 100%;
 			border: 2px solid #acadad;
-			height: 50px;
+			height: 46px;
 			padding: 0 8px;
 			font-size: 17px;
 			// font-family: 'arialnarrowitalic';
-			line-height: 50px;
+			line-height: 46px;
 			outline: none;
 			margin-bottom: 20px;
+			border-radius: 5px;
 		}
 		textarea{
 			height: 175px;
@@ -268,6 +269,7 @@ h1{
 			cursor: pointer;
 			border: none;
 			outline: none;
+			border-radius: 5px;
 		}
 		input[type="submit"]:hover{
 			background: #c12313;
@@ -424,6 +426,13 @@ h1{
 		bottom: 10px;
 		right: 15px;
 	}
+	#top-links{
+		li{
+			span{
+				background: rgba(134, 12, 20, 1);
+			}
+		}
+	}
 	.menu.on{
 		display: block !important;
 		right: 0;
@@ -437,7 +446,7 @@ h1{
 			margin-left: 0;
 			text-align: center;
 			line-height: 45px;
-			background: darken(#d6d7db, 10%);
+			background: #fff;//darken(#d6d7db, 10%);
 			margin-right: 15px;
 			animation: menu1 400ms ease-in-out;
 			animation-fill-mode: both;
@@ -477,9 +486,9 @@ h1{
 		li:nth-child(1)::before{
 			content: "";
 			position: absolute;
-			top: -6px;
+			top: -7px;
 			right: 8px;
-			border-bottom: 7px solid darken(#d6d7db, 10%);
+			border-bottom: 7px solid #fff;//darken(#d6d7db, 10%);
 			border-left: 7px solid transparent;
 			border-right: 7px solid transparent;
 			width: 0;
@@ -496,8 +505,6 @@ h1{
 			transform: rotateY(0deg) translateY(0px);
 		}
 	}
-
-
 }
 
 @media only screen and (max-width : 480px) {
@@ -538,5 +545,12 @@ h1{
 		right: 0px;
 		width: 100%;
 		text-align: center;
+	}
+	.popup{
+		padding: 15px;
+	}
+	.az-form-popup{
+		max-width: 280px;
+		width: auto;//280px;
 	}
 }

@@ -167,10 +167,10 @@ h1 {
 
 .popup {
   padding: 25px;
-  background: #1B3B50;
-  border: 3px solid #0081BC;
-  max-width: 492px;
-  border-radius: 3px;
+  background: #154252;
+  border: 3px solid #1f637b;
+  max-width: 395px;
+  border-radius: 5px;
   margin: 0 auto; }
 
 .az-form-popup {
@@ -180,7 +180,7 @@ h1 {
 .popup-title {
   color: #fff;
   font-size: 32px;
-  line-height: 40px;
+  line-height: 36px;
   display: block;
   text-align: center; }
 
@@ -200,12 +200,13 @@ h1 {
 .az-form input[type="text"], .az-form textarea {
   width: 100%;
   border: 2px solid #acadad;
-  height: 50px;
+  height: 46px;
   padding: 0 8px;
   font-size: 17px;
-  line-height: 50px;
+  line-height: 46px;
   outline: none;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border-radius: 5px; }
 .az-form textarea {
   height: 175px;
   resize: none;
@@ -221,7 +222,8 @@ h1 {
   width: 100%;
   cursor: pointer;
   border: none;
-  outline: none; }
+  outline: none;
+  border-radius: 5px; }
 .az-form input[type="submit"]:hover {
   background: #c12313;
   color: #fff; }
@@ -353,6 +355,9 @@ h1 {
     bottom: 10px;
     right: 15px; }
 
+  #top-links li span {
+    background: #860c14; }
+
   .menu.on {
     display: block !important;
     right: 0;
@@ -366,7 +371,7 @@ h1 {
       margin-left: 0;
       text-align: center;
       line-height: 45px;
-      background: #bbbdc3;
+      background: #fff;
       margin-right: 15px;
       animation: menu1 400ms ease-in-out;
       animation-fill-mode: both;
@@ -395,9 +400,9 @@ h1 {
     .menu.on li:nth-child(1)::before {
       content: "";
       position: absolute;
-      top: -6px;
+      top: -7px;
       right: 8px;
-      border-bottom: 7px solid #bbbdc3;
+      border-bottom: 7px solid #fff;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
       width: 0;
@@ -440,6 +445,13 @@ h1 {
     bottom: 65px;
     right: 0px;
     width: 100%;
-    text-align: center; } }
+    text-align: center; }
+
+  .popup {
+    padding: 15px; }
+
+  .az-form-popup {
+    max-width: 280px;
+    width: auto; } }
 
 /*# sourceMappingURL=style.css.map */
