@@ -68,6 +68,15 @@ $(function(){
         return false;
     });
     /*ajax send*/
+    /*mobile menu*/
+    
+    $(".toggle-mnu").click(function() {
+        $(this).toggleClass("on");
+        $('.menu').toggleClass("on");
+        return false;
+    });
+    /*mobile menu*/
+
 });
 
 function getURLVar(key) {

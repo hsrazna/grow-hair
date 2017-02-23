@@ -59,13 +59,16 @@
 </div>
 <div class="az-middle">
   <h1>Grow-Hair</h1>
-  <span class="az-h1-subtitle">Новый препарат для восстановления роста волос для мужчин и женщин</span>
+  <span class="az-h1-subtitle">Новый препарат для восстановления роста волос <br>для мужчин и женщин</span>
 </div>
 <div class="az-footer">
-  <div class="az-call-back"><a href="#az-popup" class="popup-with-move-anim">Закажите звонок</a></div>
-  <div class="az-phone"><a href="tel:+79034944280"><i class="fa fa-phone" aria-hidden="true"></i> +7 903 494 42 80</a></div>
+  <div class="az-call-back"><a href="#call-back" class="popup-with-move-anim">Закажите звонок</a></div>
+  <div class="az-phone">
+    <a href="whatsapp://send?text=Здравствуйте!%20Я%20с%20сайта%20Grow-Hair.&phone=+79034944280"><i class="fa fa-whatsapp" aria-hidden="true"></i> +7 903 494 42 80</a><br>
+    <a href="tel:+79034944280"><i class="fa fa-phone" aria-hidden="true"></i> +7 903 494 42 80</a>
+  </div>
 </div>
-<div class="popup zoom-anim-dialog mfp-hide" id="az-popup">
+<div class="popup zoom-anim-dialog mfp-hide" id="call-back">
     <div class="popup-first">
         <span class="popup-title">Заявка на<br>обратный звонок</span>
         <form id="popup-form-audit" class="az-form az-form-popup az-send">
