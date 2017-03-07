@@ -76,9 +76,15 @@
         <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
         <li><?php echo $cart; ?></li>
         <?php endif; ?>
-        <li><span><a href="#" title="">для мужчин</a></span></li>
-        <li><span><a href="#" title="">для женщин</a></span></li>
+        <?php if($products){ ?>
+        <?php foreach ($products as $product) {
+         ?>
+        <li><span><a href="<?php echo $product['href']; ?>" title=""><?php echo $product['name']; ?></a></span></li>
+        <?php } ?>
+        <?php } ?>
+<!--         <li><span><a href="#" title="">для женщин</a></span></li>
         <li><span><a href="#" title="">для бороды</a></span></li>
+ -->
       </ul>
     </div>
   </div>
@@ -135,3 +141,11 @@
   </nav>
 </div>
 <?php } ?>
+<?php 
+// if($products){
+//   print_r($products);
+// }
+ ?>
+
+
+

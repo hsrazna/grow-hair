@@ -90,6 +90,26 @@ class ControllerCommonHeader extends Controller {
 
 		$this->load->model('catalog/product');
 
+		// $this->load->model('product/product');
+
+		$data['products'] = array();
+
+		$products = $this->model_catalog_product->getProducts(0);
+		
+		$products_temp = array();
+
+		foreach ($products as $product) {
+			
+			$products_temp['name'] = $product['name'];
+
+			$products_temp['href'] = $this->url->link('product/product', 'product_id=' . $product['product_id']);
+
+			$data['products'][] = $products_temp;
+
+		}
+
+		// $data['products'] = $products;
+
 		$data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
