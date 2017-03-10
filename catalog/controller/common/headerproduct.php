@@ -1,5 +1,5 @@
 <?php
-class ControllerCommonHeader extends Controller {
+class ControllerCommonHeaderProduct extends Controller {
 	public function index() {
 		// Analytics
 		$this->load->model('extension/extension');
@@ -43,7 +43,7 @@ class ControllerCommonHeader extends Controller {
 			$data['logo'] = '';
 		}
 
-		$this->load->language('common/header');
+		$this->load->language('common/headerproduct');
 
 		$data['text_home'] = $this->language->get('text_home');
 
@@ -169,6 +169,6 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
 
-		return $this->load->view('common/header', $data);
+		return $this->load->view('common/headerproduct', $data);
 	}
 }

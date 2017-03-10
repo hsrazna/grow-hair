@@ -473,7 +473,7 @@ class ControllerProductProduct extends Controller {
 			$data['content_top'] = $this->load->controller('common/content_top');
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
+			$data['header'] = $this->load->controller('common/headerproduct');
 
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
@@ -549,7 +549,7 @@ class ControllerProductProduct extends Controller {
 			$data['content_top'] = $this->load->controller('common/content_top');
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
+			$data['header'] = $this->load->controller('common/headerproduct');
 
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}

@@ -26,6 +26,8 @@ class ControllerExtensionModuleSlideshow extends Controller {
 
 		$data['module'] = $module++;
 
+		$data['telephone'] = $this->config->get('config_telephone');
+
 		return $this->load->view('extension/module/slideshow', $data);
 	}
 }

@@ -64,8 +64,8 @@
 <div class="az-footer">
   <div class="az-call-back"><a href="#call-back" class="popup-with-move-anim">Закажите звонок</a></div>
   <div class="az-phone">
-    <a href="whatsapp://send?text=Здравствуйте!%20Я%20с%20сайта%20Grow-Hair.&phone=+79034944280"><i class="fa fa-whatsapp" aria-hidden="true"></i> +7 903 494 42 80</a><br>
-    <a href="tel:+79034944280"><i class="fa fa-phone" aria-hidden="true"></i> +7 903 494 42 80</a>
+    <a href="whatsapp://send?text=Здравствуйте!%20Я%20с%20сайта%20Grow-Hair.&phone=+79034944280"><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php echo $telephone; ?></a><br>
+    <a href="tel:+79034944280"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $telephone; ?></a>
   </div>
 </div>
 <div class="popup zoom-anim-dialog mfp-hide" id="call-back">
