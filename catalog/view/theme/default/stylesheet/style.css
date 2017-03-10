@@ -27,18 +27,18 @@ nav#top {
 
 #top-links {
   font-size: 0; }
-  #top-links li {
+  #top-links > ul > li {
     height: 63px;
     padding: 0; }
-    #top-links li span {
+    #top-links > ul > li > span {
       display: inline-block;
       height: 0px;
       width: 100%;
       background: rgba(134, 12, 20, 0.5);
       transition: all .3s ease-in-out; }
-  #top-links li:hover span {
+  #top-links > ul > li:hover > span {
     height: 63px; }
-  #top-links li:hover a {
+  #top-links > ul > li:hover a {
     color: #fff; }
   #top-links a {
     color: #2F122D;
@@ -453,5 +453,18 @@ h1 {
   .az-form-popup {
     max-width: 280px;
     width: auto; } }
+.breadcrumb {
+  margin-top: 100px; }
+
+/*cart*/
+.az-btn {
+  background: transparent;
+  border: none;
+  color: #2F122D;
+  width: 100px;
+  font-size: 20px; }
+  .az-btn #cart-total, .az-btn i {
+    color: #2F122D;
+    font-size: 16px; }
 
 /*# sourceMappingURL=style.css.map */
