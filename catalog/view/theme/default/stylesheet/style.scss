@@ -400,6 +400,51 @@ h1{
   z-index: 2;
 }
 
+
+//breadcrumbs
+
+.breadcrumb{
+	margin-top: 100px;	
+}
+.az-product{
+	margin-top: 100px;	
+}
+/*cart*/
+.az-btn{
+	background: transparent;
+	border: none;
+	color: #2F122D;
+	width: 100px;
+	font-size: 20px;
+	#cart-total{
+		color: #fff;//#2F122D;
+		font-size: 16px;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #2F122D;
+		background: #2F122D;
+		border-radius: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 18px;
+	}
+	img{
+		width: 16px;
+		height: 16px;
+		vertical-align: middle;
+	}
+}
+
+.az-product{
+	h1{
+		font-size: 40px;
+		color: #000;
+		margin-top: 0;
+		// text-transform: nonse;
+		font-weight: normal;	
+	}
+}
+
 @media only screen and (max-width : 768px) {
 	.az-h1-subtitle{
 		max-width: 470px;
@@ -510,7 +555,7 @@ h1{
 }
 
 @media only screen and (max-width : 480px) {
-.menu.on{
+	.menu.on{
 		right: unset;
 		left: 5px;
 		width: 100%;
@@ -557,23 +602,3 @@ h1{
 	}
 }
 
-
-//breadcrumbs
-
-.breadcrumb{
-	margin-top: 100px;	
-}
-
-/*cart*/
-.az-btn{
-	background: transparent;
-	border: none;
-	color: #2F122D;
-	width: 100px;
-	font-size: 20px;
-
-	#cart-total, i{
-		color: #2F122D;
-		font-size: 16px;
-	}
-}
