@@ -24,8 +24,48 @@
           <?php $class = 'col-sm-8'; ?>
           <?php } ?>
           <div class="<?php echo $class; ?>">
+
             <?php if ($thumb || $images) { ?>
-            <ul class="thumbnails">
+              <div class="ah-cardslider thumbnails">
+                <?php $i=0; ?>
+                <?php if ($thumb) { ?>
+                <div class="item" data-hash="<?="hash$i"?>">
+                  <div class="ah-cardslider-imgbox">
+                    <a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+                  </div>
+                </div>
+                <?php $i++; ?>
+                <?php } ?>
+                <?php if ($images) { ?>
+                <?php foreach ($images as $image) { ?>
+                <div class="item" data-hash="<?="hash$i"?>">
+                  <div class="ah-cardslider-imgbox">
+                    <a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+                  </div>
+                </div>
+                <?php $i++; ?>
+                <?php } ?>
+                <?php } ?>
+              </div>
+              <div class="ah-cardslider-dotwrapp">
+                <?php $i=0; ?>
+                <?php if ($thumb) { ?>
+                <a class="ah-cardslider-dot" href="#<?="hash$i"?>">
+                  <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                </a>
+                <?php $i++; ?>
+                <?php } ?>
+                <?php if ($images) { ?>
+                <?php foreach ($images as $image) { ?>
+                <a class="ah-cardslider-dot" href="#<?="hash$i"?>">
+                  <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                </a>
+                <?php $i++; ?>
+                <?php } ?>
+                <?php } ?>
+              </div>
+            <?php } ?>
+            <!-- <ul class="thumbnails">
               <?php if ($thumb) { ?>
               <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
               <?php } ?>
@@ -34,8 +74,8 @@
               <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
               <?php } ?>
               <?php } ?>
-            </ul>
-            <?php } ?>
+            </ul> -->
+            <?php //} ?>
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
               <?php if ($attribute_groups) { ?>
@@ -462,7 +502,7 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+				$('#cart > button').html('<img src="image/online-shopping-cart.png" alt="cart"> <span id="cart-total">' + json['total'] + '</span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
@@ -585,6 +625,17 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
+  $('.ah-cardslider').owlCarousel({
+      items:1,
+      loop:false,
+      center:true,
+      margin:0,
+      nav: true,
+      navText:['<span class="arrow-left1"></span>','<span class="arrow-right1"></span>'],
+      URLhashListener:true,
+      autoplayHoverPause:true,
+      startPosition: 'URLHash'
+  });
 	$('.thumbnails').magnificPopup({
 		type:'image',
 		delegate: 'a',
@@ -592,6 +643,7 @@ $(document).ready(function() {
 			enabled:true
 		}
 	});
+
 });
 //--></script>
 <?php echo $footer; ?>

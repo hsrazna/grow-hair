@@ -14,6 +14,9 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->model('catalog/category');
 
+		$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel2/assets/owl.carousel.css');
+		$this->document->addScript('catalog/view/javascript/jquery/owl-carousel2/owl.carousel.min.js');
+
 		if (isset($this->request->get['path'])) {
 			$path = '';
 

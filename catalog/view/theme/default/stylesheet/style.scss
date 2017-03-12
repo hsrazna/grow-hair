@@ -414,27 +414,35 @@ h1{
 	background: transparent;
 	border: none;
 	color: #2F122D;
-	width: 100px;
+	//width: 100px;
+	transition: all 1s ease-in-out;
 	font-size: 20px;
 	#cart-total{
 		color: #fff;//#2F122D;
 		font-size: 16px;
-		width: 20px;
+		min-width: 20px;
 		height: 20px;
 		border: 1px solid #2F122D;
 		background: #2F122D;
-		border-radius: 50%;
+		border-radius: 10px;
 		display: inline-block;
 		vertical-align: middle;
 		line-height: 18px;
+		padding: 0 5px;
 	}
+	
 	img{
 		width: 16px;
 		height: 16px;
 		vertical-align: middle;
 	}
 }
-
+.az-btn:hover{
+	#cart-total{
+		background: #fff;//#2F122D;
+		color: #2F122D;
+	}
+}
 .az-product{
 	h1{
 		font-size: 40px;
@@ -445,7 +453,27 @@ h1{
 	}
 }
 
+.az-cart{
+	>ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		>li{
+			height: 63px;
+			line-height: 58px;
+			vertical-align: middle;
+		}
+	}
+}
+
+.ah-cardslider.owl-carousel .owl-item img{
+	width: auto;
+}
+
 @media only screen and (max-width : 768px) {
+	.az-btn{
+		margin-left: 20px;
+	}
 	.az-h1-subtitle{
 		max-width: 470px;
 		br{
@@ -488,12 +516,13 @@ h1{
 		z-index: 12;
 		perspective: 1000px;
 		li{
+			box-shadow: 0 6px 12px rgba(0,0,0,.175);
 			width: 200px;
 			display: block;
 			margin-left: 0;
 			text-align: center;
 			line-height: 45px;
-			background: #fff;//darken(#d6d7db, 10%);
+			background: #eee;//#fff;//darken(#d6d7db, 10%);
 			margin-right: 15px;
 			animation: menu1 400ms ease-in-out;
 			animation-fill-mode: both;

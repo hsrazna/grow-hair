@@ -49,6 +49,11 @@
     <div class="nav pull-left az-logo">
       <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
     </div>
+    <div class="nav pull-right az-cart">
+      <ul class="">
+        <li><?php echo $cart; ?></li>
+      </ul>
+    </div>
     <div id="top-links" class="nav pull-right">
       <a href="#mobile-menu" class="toggle-mnu hidden-lg hidden-md hidden-sm"><span></span></a>
       <ul class="list-inline menu hidden-xs">
@@ -82,12 +87,9 @@
         <li><span><a href="<?php echo $product['href']; ?>" title=""><?php echo $product['name']; ?></a></span></li>
         <?php } ?>
         <?php } ?>
-        <li><?php echo $cart; ?></li>
-<!--         <li><span><a href="#" title="">для женщин</a></span></li>
-        <li><span><a href="#" title="">для бороды</a></span></li>
- -->
       </ul>
     </div>
+    
   </div>
 </nav>
 <?php if(0): ?>
