@@ -170,7 +170,7 @@ div.required .control-label:before {
 	z-index: 1001;
 }
 #cart .dropdown-menu {
-	min-width: 100%;
+	/*min-width: 100%;*/
 }
 @media (max-width: 478px) {
 	#cart .dropdown-menu {
@@ -671,7 +671,7 @@ h2.price {
 	margin-left: 20px;
 }
 .thumbnails {
-	margin-left: -20px;
+	/*margin-left: -20px;*/
 }
 .thumbnails > img {
 	width: 100%;

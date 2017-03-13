@@ -8,6 +8,21 @@
       <?php } ?>
     </ul>
     <?php endif; ?>
+    <div>
+      <h1><?php echo $heading_title; ?></h1>
+      <ul class="list-unstyled">
+        <?php if ($manufacturer) { ?>
+        <li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
+        <?php } ?>
+        <li><?php //echo $text_model; ?> <?php echo $model; ?></li>
+        <?php if(0): ?>
+          <?php if ($reward) { ?>
+          <li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
+          <?php } ?>
+          <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
+        <?php endif; ?>
+      </ul>
+    </div>
     <div class="row"><?php echo $column_left; ?>
       <?php if ($column_left && $column_right) { ?>
       <?php $class = 'col-sm-6'; ?>
@@ -21,7 +36,7 @@
           <?php if ($column_left || $column_right) { ?>
           <?php $class = 'col-sm-6'; ?>
           <?php } else { ?>
-          <?php $class = 'col-sm-8'; ?>
+          <?php $class = 'col-sm-7'; ?>
           <?php } ?>
           <div class="<?php echo $class; ?>">
 
@@ -29,7 +44,7 @@
               <div class="ah-cardslider thumbnails">
                 <?php $i=0; ?>
                 <?php if ($thumb) { ?>
-                <div class="item" data-hash="<?="hash$i"?>">
+                <div class="item" data-hash="<?='hash'.$i?>">
                   <div class="ah-cardslider-imgbox">
                     <a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
                   </div>
@@ -38,7 +53,7 @@
                 <?php } ?>
                 <?php if ($images) { ?>
                 <?php foreach ($images as $image) { ?>
-                <div class="item" data-hash="<?="hash$i"?>">
+                <div class="item" data-hash="<?='hash'.$i?>">
                   <div class="ah-cardslider-imgbox">
                     <a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
                   </div>
@@ -49,34 +64,23 @@
               </div>
               <div class="ah-cardslider-dotwrapp">
                 <?php $i=0; ?>
-                <?php if ($thumb) { ?>
-                <a class="ah-cardslider-dot" href="#<?="hash$i"?>">
-                  <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                <?php if ($thumb_little) { ?>
+                <a class="ah-cardslider-dot" href="<?=$href.'#hash'.$i?>">
+                  <img src="<?php echo $thumb_little; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
                 </a>
                 <?php $i++; ?>
                 <?php } ?>
-                <?php if ($images) { ?>
-                <?php foreach ($images as $image) { ?>
-                <a class="ah-cardslider-dot" href="#<?="hash$i"?>">
-                  <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                <?php if ($images_little) { ?>
+                <?php foreach ($images_little as $image_little) { ?>
+                <a class="ah-cardslider-dot" href="<?=$href.'#hash'.$i?>">
+                  <img src="<?php echo $image_little['thumb_little']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
                 </a>
                 <?php $i++; ?>
                 <?php } ?>
                 <?php } ?>
               </div>
             <?php } ?>
-            <!-- <ul class="thumbnails">
-              <?php if ($thumb) { ?>
-              <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-              <?php } ?>
-              <?php if ($images) { ?>
-              <?php foreach ($images as $image) { ?>
-              <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-              <?php } ?>
-              <?php } ?>
-            </ul> -->
-            <?php //} ?>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs az-tabs">
               <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
               <?php if ($attribute_groups) { ?>
               <li><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
@@ -129,18 +133,20 @@
                   </div>
                   <div class="form-group required">
                     <div class="col-sm-12">
-                      <label class="control-label"><?php echo $entry_rating; ?></label>
-                      &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
-                      <input type="radio" name="rating" value="1" />
-                      &nbsp;
-                      <input type="radio" name="rating" value="2" />
-                      &nbsp;
-                      <input type="radio" name="rating" value="3" />
-                      &nbsp;
-                      <input type="radio" name="rating" value="4" />
-                      &nbsp;
-                      <input type="radio" name="rating" value="5" />
-                      &nbsp;<?php echo $entry_good; ?></div>
+                      <label class="control-label az-control-label"><?php echo $entry_rating; ?></label>
+                      <?php //echo $entry_bad; ?>
+                      <div class="az-inline-block az-rating clearfix">
+                        <input type="radio" name="rating" value="1" id="az-rating1"/><label class="az-rat-label" for="az-rating1"></label>
+                        &nbsp;
+                        <input type="radio" name="rating" value="2" id="az-rating2"/><label class="az-rat-label" for="az-rating2"></label>
+                        &nbsp;
+                        <input type="radio" name="rating" value="3" id="az-rating3"/><label class="az-rat-label" for="az-rating3"></label>
+                        &nbsp;
+                        <input type="radio" name="rating" value="4" id="az-rating4"/><label class="az-rat-label" for="az-rating4"></label>
+                        &nbsp;
+                        <input type="radio" name="rating" value="5" id="az-rating5"/><label class="az-rat-label" for="az-rating5"></label>
+                        &nbsp;<?php //echo $entry_good; ?></div>
+                      </div>
                   </div>
                   <?php echo $captcha; ?>
                   <div class="buttons clearfix">
@@ -159,7 +165,7 @@
           <?php if ($column_left || $column_right) { ?>
           <?php $class = 'col-sm-6'; ?>
           <?php } else { ?>
-          <?php $class = 'col-sm-4'; ?>
+          <?php $class = 'col-sm-5'; ?>
           <?php } ?>
           <div class="<?php echo $class; ?>">
             <?php if(0): ?>
@@ -167,7 +173,7 @@
               <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
-          <?php endif; ?>
+            
             <h1><?php echo $heading_title; ?></h1>
             <ul class="list-unstyled">
               <?php if ($manufacturer) { ?>
@@ -181,6 +187,7 @@
                 <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
               <?php endif; ?>
             </ul>
+            <?php endif; ?>
             <?php if ($price) { ?>
             <ul class="list-unstyled">
               <?php if (!$special) { ?>
@@ -336,8 +343,18 @@
               </div>
               <?php } ?>
               <div class="form-group">
-                <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
-                <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
+                <div class="az-table">
+                  <div class="az-table-cell">
+                    <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
+                  </div>
+                  <div class="az-table-cell">
+                    <div class="az-plus-minus">
+                      <a href="#" class="az-minus"></a>
+                      <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
+                      <a href="#" class="az-plus"></a>
+                    </div>
+                  </div>
+                </div>
                 <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
                 <br />
                 <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
@@ -356,7 +373,7 @@
                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
                 <?php } ?>
                 <?php } ?>
-                <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
+                <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> <span>/</span> <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
               <hr>
               <!-- AddThis Button BEGIN -->
               <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
@@ -643,7 +660,24 @@ $(document).ready(function() {
 			enabled:true
 		}
 	});
-
+  $(".az-minus").click(function(){
+    var az_input = parseInt($(this).siblings("input").val());
+    if(!az_input){
+      az_input = 1;
+    }
+    az_input = az_input>1?--az_input:az_input;
+    $(this).siblings("input").val(az_input);
+    return false;
+  });
+  $(".az-plus").click(function(){
+    var az_input = parseInt($(this).siblings("input").val());
+    if(!az_input){
+      az_input = 1;
+    }
+    az_input = az_input<99?++az_input:az_input;
+    $(this).siblings("input").val(az_input);
+    return false;
+  });
 });
 //--></script>
 <?php echo $footer; ?>

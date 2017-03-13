@@ -1,6 +1,10 @@
 a, a:hover, a:focus, a:active {
   text-decoration: none;
-  outline: none; }
+  outline: none;
+  vertical-align: middle; }
+
+span {
+  vertical-align: middle; }
 
 .az-logo {
   width: 100px;
@@ -35,7 +39,8 @@ nav#top {
       height: 0px;
       width: 100%;
       background: rgba(134, 12, 20, 0.5);
-      transition: all .3s ease-in-out; }
+      transition: all .3s ease-in-out;
+      vertical-align: top; }
   #top-links > ul > li:hover > span {
     height: 63px; }
   #top-links > ul > li:hover a {
@@ -329,10 +334,10 @@ h1 {
   z-index: 2; }
 
 .breadcrumb {
-  margin-top: 100px; }
+  margin-top: 70px; }
 
 .az-product {
-  margin-top: 100px; }
+  margin-top: 70px; }
 
 /*cart*/
 .az-btn {
@@ -380,7 +385,147 @@ h1 {
 .ah-cardslider.owl-carousel .owl-item img {
   width: auto; }
 
+.az-tabs.nav-tabs > li > a {
+  border: none;
+  position: relative;
+  color: #666;
+  padding: 5px 15px; }
+
+.az-tabs.nav-tabs > li.active > a {
+  border: none;
+  position: relative;
+  color: #860c14;
+  cursor: pointer; }
+
+.az-tabs.nav-tabs > li.active > a:hover {
+  background: #eee; }
+
+.az-tabs.nav-tabs > li.active > a::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #860c14; }
+
+.az-tabs.nav-tabs {
+  border: none; }
+
+.ah-cardslider-imgbox a.thumbnail.active, .ah-cardslider-imgbox a.thumbnail:focus, .ah-cardslider-imgbox a.thumbnail:hover {
+  border-color: #860c14; }
+
+.az-plus-minus a.az-minus {
+  border-right: 10px solid #666;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  font-size: 0;
+  margin-right: 3px;
+  vertical-align: middle; }
+.az-plus-minus a.az-plus {
+  border-left: 10px solid #666;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+  margin-left: 3px; }
+.az-plus-minus a.az-minus:hover {
+  border-right: 10px solid #444; }
+.az-plus-minus a.az-plus:hover {
+  border-left: 10px solid #444; }
+.az-plus-minus input {
+  width: 100px;
+  vertical-align: middle;
+  display: inline-block;
+  outline: none; }
+.az-plus-minus input:focus {
+  border-color: #860c14;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(134, 12, 20, 0.6); }
+
+.az-table {
+  display: table; }
+
+.az-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px 0 0; }
+
+.control-label {
+  margin: 0; }
+
+.btn-primary {
+  display: inline-block;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  line-height: 40px;
+  height: 40px;
+  background: rgba(134, 12, 20, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+  border: none; }
+
+.btn-primary:hover {
+  background: #860c14; }
+
+.addthis_button_tweet > div {
+  width: auto !important; }
+
+.item {
+  padding: 0 1px; }
+
+#tab-description h2, #tab-description h3 {
+  font-weight: bold; }
+#tab-description h2 {
+  font-size: 18px !important; }
+#tab-description h3 {
+  font-size: 16px !important; }
+
+.form-group .az-control-label {
+  padding-top: 0;
+  vertical-align: middle; }
+
+.az-rating input[type="radio"] {
+  display: none; }
+.az-rating .az-rat-label {
+  float: right;
+  padding: 2px;
+  margin-bottom: 0;
+  cursor: pointer; }
+.az-rating .az-rat-label::before {
+  content: "\f005";
+  font-family: FontAwesome;
+  font-size: 19px;
+  color: #888; }
+.az-rating input[type="radio"]:checked ~ .az-rat-label::before {
+  color: #860c14; }
+
+.az-rating:hover .az-rat-label::before {
+  color: #888 !important; }
+.az-rating:hover .az-rat-label:hover::before {
+  color: #860c14 !important; }
+.az-rating:hover .az-rat-label:hover ~ .az-rat-label::before {
+  color: #860c14 !important; }
+
+.az-inline-block {
+  display: inline-block; }
+
 @media only screen and (max-width: 768px) {
+  .az-product h1 {
+    text-align: center; }
+  .az-product .list-unstyled {
+    text-align: center; }
+
+  .az-logo {
+    margin-left: calc(50% - 78px); }
+
   .az-btn {
     margin-left: 20px; }
 
@@ -415,7 +560,7 @@ h1 {
 
   .menu.on {
     display: block !important;
-    right: 0;
+    left: 0;
     top: 100%;
     position: absolute;
     z-index: 12;
@@ -424,11 +569,11 @@ h1 {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       width: 200px;
       display: block;
-      margin-left: 0;
+      margin-left: 15px;
       text-align: center;
       line-height: 45px;
       background: #eee;
-      margin-right: 15px;
+      margin-right: 0;
       animation: menu1 400ms ease-in-out;
       animation-fill-mode: both;
       border-bottom: 1px solid #aaa; }
@@ -472,6 +617,15 @@ h1 {
       opacity: 1;
       transform: rotateY(0deg) translateY(0px); } } }
 @media only screen and (max-width: 480px) {
+  #cart {
+    position: static; }
+
+  .az-logo {
+    margin-left: 20px; }
+
+  .az-btn {
+    margin-left: 0; }
+
   .menu.on {
     right: unset;
     left: 5px;
@@ -480,7 +634,8 @@ h1 {
       width: 100%;
       margin-right: 0;
       animation: menu2 400ms ease-in-out;
-      animation-fill-mode: both; }
+      animation-fill-mode: both;
+      margin-left: 0; }
     .menu.on li:nth-child(1)::before {
       right: 23px; }
 

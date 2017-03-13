@@ -46,6 +46,9 @@
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
+    <div class="nav pull-left">
+      <a href="#mobile-menu" class="toggle-mnu hidden-lg hidden-md hidden-sm"><span></span></a>
+    </div>
     <div class="nav pull-left az-logo">
       <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
     </div>
@@ -55,7 +58,7 @@
       </ul>
     </div>
     <div id="top-links" class="nav pull-right">
-      <a href="#mobile-menu" class="toggle-mnu hidden-lg hidden-md hidden-sm"><span></span></a>
+      
       <ul class="list-inline menu hidden-xs">
         <?php if(0): ?>
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
