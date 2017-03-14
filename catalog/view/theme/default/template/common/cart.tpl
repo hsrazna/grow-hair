@@ -20,7 +20,15 @@
             <br />
             - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
             <?php } ?></td>
-          <td class="text-right">x <?php echo $product['quantity']; ?></td>
+          <td class="text-right">
+            <div class="az-plus-minus">
+              <a href="#" class="az-minus-cart" data-cart-id="<?php echo $product['cart_id']; ?>"></a>
+              <input type="text" name="quantity" value="<?php echo $product['quantity']; ?>" size="2" id="input-quantity" class="form-control" />
+              <a href="#" class="az-plus-cart" data-cart-id="<?php echo $product['cart_id']; ?>"></a>
+            </div>
+          x <?php echo $product['quantity']; ?>
+            
+          </td>
           <td class="text-right"><?php echo $product['total']; ?></td>
           <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
@@ -56,3 +64,27 @@
     <?php } ?>
   </ul>
 </div>
+<script>
+  $(document).ready(function() {
+    $(".az-minus-cart").click(function(){
+    var az_input = parseInt($(this).siblings("input").val());
+    if(!az_input){
+      az_input = 1;
+    }
+    az_input = az_input>1?--az_input:az_input;
+    $(this).siblings("input").val(az_input);
+    cart.update($(this).attr('data-cart-id'), az_input);
+    return false;
+  });
+  $(".az-plus-cart").click(function(){
+    var az_input = parseInt($(this).siblings("input").val());
+    if(!az_input){
+      az_input = 1;
+    }
+    az_input = az_input<99?++az_input:az_input;
+    $(this).siblings("input").val(az_input);
+    cart.update($(this).attr('data-cart-id'), az_input);
+    return false;
+  });
+  });
+</script>

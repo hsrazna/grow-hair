@@ -509,7 +509,7 @@ h1{
 	}
 }
 .az-plus-minus{
-	a.az-minus{
+	a.az-minus, a.az-minus-cart{
 		border-right: 10px solid #666;
 		border-bottom: 10px solid transparent;
 		border-top: 10px solid transparent;
@@ -520,7 +520,7 @@ h1{
 		margin-right: 3px;
 		vertical-align: middle;
 	}
-	a.az-plus{
+	a.az-plus, a.az-plus-cart{
 		border-left: 10px solid #666;
 		border-bottom: 10px solid transparent;
 		border-top: 10px solid transparent;
@@ -638,6 +638,13 @@ h1{
 
 .az-inline-block{
 	display: inline-block;
+}
+
+footer{
+	p{
+		margin-bottom: 30px;
+		text-align: center;
+	}
 }
 
 @media only screen and (max-width : 768px) {

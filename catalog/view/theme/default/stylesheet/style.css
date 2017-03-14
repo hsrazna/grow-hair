@@ -415,7 +415,7 @@ h1 {
 .ah-cardslider-imgbox a.thumbnail.active, .ah-cardslider-imgbox a.thumbnail:focus, .ah-cardslider-imgbox a.thumbnail:hover {
   border-color: #860c14; }
 
-.az-plus-minus a.az-minus {
+.az-plus-minus a.az-minus, .az-plus-minus a.az-minus-cart {
   border-right: 10px solid #666;
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
@@ -425,7 +425,7 @@ h1 {
   font-size: 0;
   margin-right: 3px;
   vertical-align: middle; }
-.az-plus-minus a.az-plus {
+.az-plus-minus a.az-plus, .az-plus-minus a.az-plus-cart {
   border-left: 10px solid #666;
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
@@ -516,6 +516,10 @@ h1 {
 
 .az-inline-block {
   display: inline-block; }
+
+footer p {
+  margin-bottom: 30px;
+  text-align: center; }
 
 @media only screen and (max-width: 768px) {
   .az-product h1 {
