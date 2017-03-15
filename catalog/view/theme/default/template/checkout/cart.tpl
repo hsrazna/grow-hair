@@ -36,7 +36,7 @@
       </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered az-table-striped">
             <thead>
               <tr>
                 <td class="text-center"><?php echo $column_image; ?></td>
@@ -90,7 +90,7 @@
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                     <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
                     <span class="input-group-btn">
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="voucher.remove('<?php echo $voucher['key']; ?>');"><i class="fa fa-times-circle"></i></button>
+                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger az-btn-remove" onclick="voucher.remove('<?php echo $voucher['key']; ?>');"><i class="fa fa-times-circle"></i></button>
                     </span></div></td>
                 <td class="text-right"><?php echo $voucher['amount']; ?></td>
                 <td class="text-right"><?php echo $voucher['amount']; ?></td>

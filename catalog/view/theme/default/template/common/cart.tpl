@@ -3,7 +3,7 @@
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>
-      <table class="table table-striped">
+      <table class="table table-striped az-table-striped">
         <?php foreach ($products as $product) { ?>
         <tr>
           <td class="text-center"><?php if ($product['thumb']) { ?>
@@ -21,16 +21,16 @@
             - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
             <?php } ?></td>
           <td class="text-right">
-            <div class="az-plus-minus">
+            <div class="az-plus-minus style2">
               <a href="#" class="az-minus-cart" data-cart-id="<?php echo $product['cart_id']; ?>"></a>
-              <input type="text" name="quantity" value="<?php echo $product['quantity']; ?>" size="2" id="input-quantity" class="form-control" />
+              x <input type="text" name="quantity" value="<?php echo $product['quantity']; ?>" size="2" id="input-quantity" class="form-control" />
               <a href="#" class="az-plus-cart" data-cart-id="<?php echo $product['cart_id']; ?>"></a>
             </div>
-          x <?php echo $product['quantity']; ?>
+          <!-- x <?php echo $product['quantity']; ?> -->
             
           </td>
           <td class="text-right"><?php echo $product['total']; ?></td>
-          <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
+          <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs az-btn-remove"><i class="fa fa-times"></i></button></td>
         </tr>
         <?php } ?>
         <?php foreach ($vouchers as $voucher) { ?>
@@ -66,25 +66,25 @@
 </div>
 <script>
   $(document).ready(function() {
-    $(".az-minus-cart").click(function(){
-    var az_input = parseInt($(this).siblings("input").val());
-    if(!az_input){
-      az_input = 1;
-    }
-    az_input = az_input>1?--az_input:az_input;
-    $(this).siblings("input").val(az_input);
-    cart.update($(this).attr('data-cart-id'), az_input);
-    return false;
-  });
-  $(".az-plus-cart").click(function(){
-    var az_input = parseInt($(this).siblings("input").val());
-    if(!az_input){
-      az_input = 1;
-    }
-    az_input = az_input<99?++az_input:az_input;
-    $(this).siblings("input").val(az_input);
-    cart.update($(this).attr('data-cart-id'), az_input);
-    return false;
-  });
+    $("body").on("click", ".az-minus-cart", function(){
+      var az_input = parseInt($(this).siblings("input").val());
+      if(!az_input){
+        az_input = 1;
+      }
+      az_input = az_input>1?--az_input:az_input;
+      $(this).siblings("input").val(az_input);
+      cart.update($(this).attr('data-cart-id'), az_input);
+      return false;
+    });
+    $("body").on("click", ".az-plus-cart", function(){
+      var az_input = parseInt($(this).siblings("input").val());
+      if(!az_input){
+        az_input = 1;
+      }
+      az_input = az_input<99?++az_input:az_input;
+      $(this).siblings("input").val(az_input);
+      cart.update($(this).attr('data-cart-id'), az_input);
+      return false;
+    });
   });
 </script>
